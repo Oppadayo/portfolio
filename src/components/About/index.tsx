@@ -15,7 +15,7 @@ export function About() {
       setUser(data)
     }
     catch(erro){
-      console.log(erro, 'Não foi possível carregar os repositorios')
+      console.log(erro, 'Não foi possível carregar as informações de usuário')
     }
   }
 
@@ -25,11 +25,13 @@ export function About() {
 
   return (
     <Card>
-      <div className='about-container'>
-        <img src={user?.avatar_url} />
-        <h1>{user?.name}</h1>
-        <p>Mobile Developer React Native</p>
-      </div>
+       {user && 
+     ( <div className='about-container'>       
+         <img src={user?.avatar_url} />
+          <h1>{user?.name}</h1>
+          <p>Mobile Developer React Native</p>
+      </div>)
+       }
     </Card>         
 
   )

@@ -17,7 +17,7 @@ export function Education() {
 
         <ul>
           {education.map(edu => (
-            <li>
+            <li key={edu.id}>
               <div className='xp-data'>
                 <p>{edu.title}</p>
                 <small>{edu.date}</small>

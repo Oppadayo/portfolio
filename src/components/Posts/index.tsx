@@ -55,13 +55,13 @@ export function Posts() {
       <Card>
         <div className='posts-header'>
           <h3>Posts</h3>
-          <a href="https://www.notion.so/Blog-d946e5a4c272481ba1470cbe88f63d12">Veja todos</a>
+          <a href="https://www.notion.so/Blog-d946e5a4c272481ba1470cbe88f63d12" target="_blank" rel="noreferrer">Veja todos</a>
         </div>
       </Card>
      
-      {posts.map((post, key) => (  
-        <Card key={key}>
-        <a href={post.url}>        
+      {posts.map((post) => (  
+        <Card key={post.id}>
+        <a href={post.url} target="_blank" rel="noreferrer">        
           <div className='head'>            
             <h3>{getTitle(post.url, post.id)}</h3>
             <p>{getPublishedDate(post.created_time)}</p>

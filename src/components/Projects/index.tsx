@@ -33,12 +33,12 @@ export function Projects() {
       <Card>
         <div className='projects-header'>
           <h4>My Projects</h4>
-          <a href="https://github.com/oppadayo">Veja todos</a>
+          <a href="https://github.com/oppadayo" target="_blank" rel="noreferrer">Veja todos</a>
         </div>
       </Card>
       <div className='projects-container'>
       {repos.map(repo => (  
-        <Card>
+        <Card key={repo.id}>
           <div className='header'>
             <Folder weight='bold' size={24} />
             <h5>{repo.name}</h5>
