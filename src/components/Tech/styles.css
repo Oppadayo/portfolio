@@ -1,0 +1,21 @@
+.tech-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: 16px;
+}
+
+.pill{
+  width: 130px;
+  height: 30px;
+  background-color: var(--bg-techs);
+  border-radius: 40px;
+  color: var(--body-bg-color);
+  font-weight: 700;
+  font-size: 12px;
+  margin: 6px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

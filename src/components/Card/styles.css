@@ -1,0 +1,8 @@
+.card-container {
+  background-color: var(--bg-cards);
+  border-radius: 12px;
+  padding: 10px 22px;
+  margin: 12px;
+  box-shadow: 6px 5px 6px 0px rgba(0,0,0,0.4);
+}
+
