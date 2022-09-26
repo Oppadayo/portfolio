@@ -1,4 +1,5 @@
 import ScrollReveal from 'scrollreveal'
+import CV from  '../../assets/files/PaulaCorrea-CV.pdf'
 
 import './styles.css'
 
@@ -43,7 +44,7 @@ scrollReveal.reveal('showcase-area', {delay: 600})
           
           <div className="cta">
             <a href="mailto:paula.correapcs@gmail.com" className="btn">Contato</a>
-            <a href="../../assets/files/PaulaCorrea-CV.pdf" download className="btn secondary-btn">Download CV</a>
+            <a href={CV} download className="btn secondary-btn">Download CV</a>
           </div>
         </div>
       </section>

@@ -1,12 +1,13 @@
 import { About } from '../../components/About'
 import { Contact } from '../../components/Contact'
+import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Posts } from '../../components/Posts'
 import { Projects } from '../../components/Projects'
 import { ShowCase } from '../../components/Showcase'
 import { Skills } from '../../components/Skills'
 import { SwitchTheme } from '../../contexts/ToggleTheme'
-import { Footer } from '../../Footer'
+
 
 import './styles.css'
 
