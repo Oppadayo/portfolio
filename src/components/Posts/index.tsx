@@ -1,11 +1,9 @@
-import { Folder, GitFork, Star } from 'phosphor-react'
-import { useEffect, useState } from 'react'
+ import { useEffect, useState } from 'react'
 import { PostInterface } from '../../interfaces/Post'
-import { RepoInterface } from '../../interfaces/Repo'
-import { Card } from '../Card'
 import './styles.css'
 
-export function Posts() {
+ export function Posts(){
+
   const [posts, setPosts] = useState<PostInterface[]>([])
 
   
@@ -39,42 +37,38 @@ export function Posts() {
     
     return newTitle
   }
-  
-  if(!posts) {
-  
-    return <Card>
-      Nenhum post disponível
-    </Card>
-  }
+ 
   useEffect(() => {
     fetchPosts()
   }, []) 
 
+   
+  if(!posts) {
+  
+    return <div>
+      Nenhum post disponível
+    </div>
+  }
+
   return (
-    <>
-      <Card>
-        <div className='posts-header'>
-          <h3>Posts</h3>
-          <a href="https://www.notion.so/Blog-d946e5a4c272481ba1470cbe88f63d12" target="_blank" rel="noreferrer">Veja todos</a>
+    <section className="posts section" id='posts'>
+      <div className="container">
+        <div className="posts-info">    
+        <h3 className="sub-heading">Meus Posts</h3>   
+        <h1 className="heading">O que ando postando</h1>   
         </div>
-      </Card>
-     
-      {posts.map((post) => (  
-        <Card key={post.id}>
-        <a href={post.url} target="_blank" rel="noreferrer">        
-          <div className='head'>            
-            <h3>{getTitle(post.url, post.id)}</h3>
-            <p>{getPublishedDate(post.created_time)}</p>
-          </div>
-          <footer className='post-footer'>              
-            <small></small>              
-          </footer>
-          </a>    
-        </Card>)
-        )}
-      
-    </>
+
+        <div className="posts-grid">
+          {posts.map(post => <a href={post.url} target='_blank' className="post-card">
+            <div className="card-desc">
+              <h3>{getTitle(post.url, post.id)}</h3>
+              <p className="text">{getPublishedDate(post.created_time)}</p>
+            </div>
+           
+          </a>)}          
+        </div>
+        <a href="#" className="btn secondary-btn">Veja todos</a>
+      </div>
+    </section>
   )
-}
-
-
+ }

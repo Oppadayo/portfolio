@@ -1,10 +1,9 @@
-import { Folder, GitFork, Star } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 import { RepoInterface } from '../../interfaces/Repo'
-import { Card } from '../Card'
 import './styles.css'
 
-export function Projects() {
+export function Projects(){
+
   const [repos, setRepos] = useState<RepoInterface[]>([])
 
   async function fetchProjects(){ 
@@ -13,7 +12,7 @@ export function Projects() {
     
       const user = await response.json()
   
-      const reposResponse = await fetch(`${user.repos_url}?per_page=6`)  
+      const reposResponse = await fetch(`${user.repos_url}?per_page=9`)  
      
       const repos = await reposResponse.json()
 
@@ -28,49 +27,30 @@ export function Projects() {
     fetchProjects()
   }, []) 
 
+
   return (
-    <>
-      <Card>
-        <div className='projects-header'>
-          <h4>My Projects</h4>
-          <a href="https://github.com/oppadayo" target="_blank" rel="noreferrer">Veja todos</a>
-        </div>
-      </Card>
-      <div className='projects-container'>
-      {repos.map(repo => (  
-        <Card key={repo.id}>
-          <div className='header'>
-            <Folder weight='bold' size={24} />
-            <h5>{repo.name}</h5>
+    <section className="projects section" id='projects'>
+      <div className="container">
+        <div className="project-header">
+          <div className="project-title">
+            <h3 className="sub-heading">Projetos</h3>
+            <h1 className="heading">O que faço.</h1>
+            <p className="text">Um pouco do que faço e estudo. Dá uma olhada!</p>
           </div>
-          
-          <p>{repo.description}</p>
-          <footer>
-            <div className='projects-row'>
-              <div className='projects-row'>
-                <Star weight='bold' size={24} />
-                <small>{repo.stargazers_count}</small>                
-              </div>
-              <div className='projects-row'>
-                <GitFork weight='bold' size={24} />
-                <small>{repo.forks_count}</small>                
-              </div>
-              
-            </div>
-
-            <div className='projects-row'>
-              <p>{repo.language}</p>
-            </div>
          
-            
+        </div>
 
-          </footer>
-          
-        </Card>)
-        )}
+        <div className="project-gallery">
+          {repos.map(repo => <div className="project-card">
+            <div className="project-desc">
+              <h3>{repo.name}</h3>
+              <p className="text">{repo.description}</p>
+             
+            </div>
+            <a href={repo.url} className="btn secondary-btn sm">Detalhes</a>
+          </div>)}          
+        </div>
       </div>
-    </>
+    </section>
   )
 }
-
-

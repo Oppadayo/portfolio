@@ -1,30 +1,23 @@
-.posts-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 8px;
+.posts-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2.4rem;
+  margin: 2rem 0;
 }
 
-.posts-header a{
-  font-size: 12px;
+.post-card{
+  background-color: var(--bg-color-2);
+  border-radius: 15px;
+  padding: 2.5rem;
 }
 
-.head {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
- 
+.post-card h3{
+  color: var(--heading-color);
 }
 
-.head p{
-  font-size: 10px;
-  margin-top: 8px;
+.post-card .text{
+  margin: .7rem 0;
+  font-size: .7rem;
 }
-
-.post-footer{
-  padding: 16px 0;
-  
-}
-
-
 

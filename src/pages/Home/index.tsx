@@ -1,31 +1,36 @@
 import { About } from '../../components/About'
-import { Education } from '../../components/Education'
+import { Contact } from '../../components/Contact'
+import { Header } from '../../components/Header'
 import { Posts } from '../../components/Posts'
 import { Projects } from '../../components/Projects'
-import { Social } from '../../components/Social'
-import { Tech } from '../../components/Tech'
-import { Xp } from '../../components/Xp'
+import { ShowCase } from '../../components/Showcase'
+import { Skills } from '../../components/Skills'
+import { SwitchTheme } from '../../contexts/ToggleTheme'
+import { Footer } from '../../Footer'
+
 import './styles.css'
 
 export function Home() {
-  return (
-    <div className='container'>
-      <div className='grid'>
-        <div>
-          <About />
-          <Social />
-          <Tech />
-          <Xp />
-          <Education />
-        </div>
 
-        <div>
-        <Projects />
-        <Posts />
+  const {theme, toggleTheme} = SwitchTheme()  
+
+  return (    
+   
+      <div className='box' id={theme}>
+        <div className='container'>
+          <Header onClick={toggleTheme} theme={theme} />
+          <main>
+            <ShowCase />
+            <About />
+            <Skills />
+            <Projects />
+            <Posts />
+            <Contact />
+            <Footer />
+          </main> 
         </div>
       </div>
-      
-    </div>
+    
   )
 }
 
