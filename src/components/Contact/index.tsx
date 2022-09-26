@@ -6,7 +6,7 @@ export function Contact(){
       <div className="container">
         <div className="contact-info">
           <h3 className="sub-heading">Contato</h3>
-          <h1 className="heading">Como entrar em contanto.</h1>
+          <h1 className="heading">Como entrar em contato.</h1>
           <p className="text">Se interessou? Me manda uma mensagem!</p>
 
           <div className="contact-link">
