@@ -1,6 +1,16 @@
 import './styles.css'
 
 export function Contact(){
+
+  const email = 'paula.correapcs@gmail.com'
+
+  function onHandleCopy(){ 
+    navigator.clipboard.writeText(email) 
+
+  }
+
+
+
   return (
     <section className="contact section" id='contact'>
       <div className="container">
@@ -10,7 +20,7 @@ export function Contact(){
           <p className="text">Se interessou? Me manda uma mensagem!</p>
 
           <div className="contact-link">
-            <a href="mailto:paula.correapcs@gmail.com" className="link">paula.correapcs@gmail.com</a>
+            <a onClick={onHandleCopy} className="link">{email}</a>
             <i className="uil uil-arrow-right"></i>        
           </div>
 
@@ -27,6 +37,10 @@ export function Contact(){
           <textarea placeholder='Sua mensagem'  className="form-input" required></textarea>
           <input type="submit" value='Enviar' className="btn" />
         </form>
+      </div>
+
+      <div className='sheet'>
+        
       </div>
 
      

@@ -12,7 +12,7 @@ export function Projects(){
     
       const user = await response.json()
   
-      const reposResponse = await fetch(`${user.repos_url}?per_page=9`)  
+      const reposResponse = await fetch(`${user.repos_url}?per_page=9&sort=created`)  
      
       const repos = await reposResponse.json()
 
@@ -22,6 +22,8 @@ export function Projects(){
       console.log(erro, 'Não foi possível carregar os repositorios')
     }
   }
+
+  console.log(repos.map(repo => repo))
 
   useEffect(() => {    
     fetchProjects()
@@ -40,14 +42,18 @@ export function Projects(){
          
         </div>
 
+      
+
         <div className="project-gallery">
           {repos.map(repo => <div className="project-card">
+           
             <div className="project-desc">
               <h3>{repo.name}</h3>
               <p className="text">{repo.description}</p>
+              
              
             </div>
-            <a href={repo.url} className="btn secondary-btn sm">Detalhes</a>
+            <a href={repo.html_url} className="btn secondary-btn sm">Detalhes</a>
           </div>)}          
         </div>
       </div>
