@@ -13,13 +13,12 @@
   justify-content: center;
   column-gap: 2.5rem;
   row-gap: 100px;
-  margin-right: 2rem;
-  z-index: -1;
+  margin-right: 2rem;  
   position: relative;
 }
 
 .about-card{
-  background-color:red;
+  background-color:var(--bg-color-2);
   width: 100%;
   height: 100%;
 
