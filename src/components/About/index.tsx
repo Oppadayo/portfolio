@@ -1,3 +1,5 @@
+import { about } from '../../data'
+import { AboutCard } from './AboutCard'
 import './styles.css'
 
 export function About(){
@@ -5,29 +7,11 @@ export function About(){
     <section className="about section" id='about'>
       <div className="container">
         <div className="about-grid">
-        <div className="about-card">
-          <i className="uil uil-mobile-android"></i>          
-          <h3>Mobile</h3>
-        </div>
-
-        <div className="about-card">
-          <i className="uil uil-window"></i>
-          <h3>Web</h3>
-        </div>
-
-        <div className="about-card">
-          <i className="uil uil-react"></i>
-          <h3>React</h3>
-        </div>
-
-        <div className="about-card">
-          <i className="uil uil-java-script"></i>
-          <h3>Javascript/<br/>Typescript</h3>
-        </div>
+       {about.map(ab => <AboutCard key={ab.id} title={ab.title} icon={ab.icon} />)}
         </div>
         <div className="about-info">
           <h3 className='sub-heading'>Sobre mim</h3>
-          <h1 className='heading'>Paula Correa</h1>
+          <h1 className='heading'>Paula Correa.</h1>
           <p className="text">
             Sou desenvolvedora front-end e mobile, 
             formada em análise e desenvolvimento de sistemas. 

@@ -22,27 +22,3 @@
   margin-top: 2rem;
   justify-content: space-between;
 }
-
-.skill{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 150px;
-  width: 150px;
-
-  border-radius: 75px;
-
-  background-color: var(--bg-color-3);
-
-  margin-top: 2rem;
-
-  border: 5px solid var(--main-color-1);
-}
-
-.skill-title{
-  color: var(--heading-color);
-  font-weight: 400;
-  font-size: 0.9rem;
-}
-

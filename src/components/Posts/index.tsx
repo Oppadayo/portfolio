@@ -55,7 +55,7 @@ import './styles.css'
       <div className="container">
         <div className="posts-info">    
         <h3 className="sub-heading">Meus Posts</h3>   
-        <h1 className="heading">O que ando postando</h1>   
+        <h1 className="heading">O que ando postando.</h1>   
         </div>
 
         <div className="posts-grid">
